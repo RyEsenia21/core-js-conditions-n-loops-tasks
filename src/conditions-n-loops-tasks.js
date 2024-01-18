@@ -127,8 +127,9 @@ function convertToRomanNumerals(num) {
     result += 'IV';
     remainingNum = 0;
   }
-  for (; remainingNum >= 1; remainingNum -= 1) {
+  while (remainingNum >= 1) {
     result += 'I';
+    remainingNum -= 1;
   }
   return result;
 }
