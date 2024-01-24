@@ -117,11 +117,17 @@ function isIsoscelesTriangle(a, b, c) {
 function convertToRomanNumerals(num) {
   let result = '';
   let remainingNum = num;
-  for (; remainingNum >= 10; remainingNum -= 10) {
+  while (remainingNum >= 10) {
     result += 'X';
+    remainingNum -= 10;
   }
-  for (; remainingNum >= 5; remainingNum -= 5) {
+  if (remainingNum >= 9) {
+    result += 'IX';
+    remainingNum -= 9;
+  }
+  while (remainingNum >= 5) {
     result += 'V';
+    remainingNum -= 5;
   }
   if (remainingNum === 4) {
     result += 'IV';
